@@ -1,0 +1,19 @@
+# systemd unit — copy to /etc/systemd/system/integration-fivem.service,
+# put the two secrets into /etc/integration-fivem.env (chmod 600):
+#   LH_INGEST_URL=https://api.linkharbor.com/v1/ingest/123
+#   LH_INGEST_SECRET=…
+[Unit]
+Description=LinkHarbor FiveM/RedM agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/integration-fivem.env
+ExecStart=/usr/bin/python3 /opt/integration-fivem/agent.py --host 127.0.0.1 --port 30120 --name "My RP Server" --address "cfx.re/join/abcdef" --url "https://discord.gg/xyz"
+Restart=always
+RestartSec=10
+User=nobody
+
+[Install]
+WantedBy=multi-user.target

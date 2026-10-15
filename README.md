@@ -10,14 +10,14 @@ It uses the public HTTP endpoints every FiveM/RedM server already exposes on
 its game port (`/dynamic.json`, `/players.json`, `/info.json`), so nothing is
 installed on the server. Standard library only, Python 3.10+.
 
-Part of the [LinkHarbor integrations](https://github.com/linkharbor/linkharbor-integrations)
+Part of the [LinkHarbor integrations](https://github.com/linkharbor/integrations)
 family (one repo per game).
 
 ## Setup
 
 ```bash
-git clone https://github.com/linkharbor/linkharbor-fivem
-cd linkharbor-fivem
+git clone https://github.com/linkharbor/integration-fivem
+cd integration-fivem
 
 export LH_INGEST_URL="https://api.linkharbor.com/v1/ingest/123"   # dashboard → Integrations → Custom (API)
 export LH_INGEST_SECRET="…"
@@ -27,8 +27,8 @@ python3 agent.py --host 203.0.113.10 --port 30120 \
   --url "https://discord.gg/xyz" --interval 60
 ```
 
-Try `--once -v` first. Run it as a service with `linkharbor-fivem.service`
-(systemd; secrets go into `/etc/linkharbor-fivem.env`, `chmod 600`). If the
+Try `--once -v` first. Run it as a service with `integration-fivem.service`
+(systemd; secrets go into `/etc/integration-fivem.env`, `chmod 600`). If the
 server runs on the same machine, `--host 127.0.0.1` works even when the
 endpoints are firewalled from the outside.
 

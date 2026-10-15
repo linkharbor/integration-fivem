@@ -19,7 +19,7 @@ family (one repo per game).
 git clone https://github.com/linkharbor/integration-fivem
 cd integration-fivem
 
-export LH_INGEST_URL="https://api.linkharbor.com/v1/ingest/123"   # dashboard → Integrations → Custom (API)
+export LH_INGEST_URL="https://dock.at-harbor.com/v1/ingest/123"   # dashboard → Integrations → Custom (API)
 export LH_INGEST_SECRET="…"
 
 python3 agent.py --host 203.0.113.10 --port 30120 \

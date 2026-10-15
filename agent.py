@@ -6,7 +6,7 @@ Polls the server's public HTTP endpoints (`/dynamic.json`, `/players.json`,
 30120) and pushes the state to a LinkHarbor "Custom (API)" integration: a
 live game-server card on your bio page and push notifications for joins.
 
-    export LH_INGEST_URL="https://api.linkharbor.com/v1/ingest/123"
+    export LH_INGEST_URL="https://dock.at-harbor.com/v1/ingest/123"
     export LH_INGEST_SECRET="…"
     python3 agent.py --host 203.0.113.10 --port 30120 --name "My RP Server" \
         --address "cfx.re/join/abcdef" --url "https://discord.gg/xyz"
